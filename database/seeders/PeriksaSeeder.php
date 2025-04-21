@@ -31,4 +31,5 @@ class PeriksaSeeder extends Seeder
             'biaya_periksa' => 0,
         ]);
     }
+    
 }
