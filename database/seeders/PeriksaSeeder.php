@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Models\Periksa;
 
 class PeriksaSeeder extends Seeder
 {
@@ -14,14 +15,20 @@ class PeriksaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        DB::connection('consultation')->table(('periksas'))->insert([
-            'id_pasien' => 2,
-            'id_dokter' => 3,
+        Periksa::create([
+            'id_pasien' => 4,
+            'id_dokter' => 5,
             'tgl_periksa' => Carbon::now(),
-            'catatan' => 'Kebanyakan Nyabu.',
+            'catatan' => 'Tidak ada masalah.',
+            'biaya_periksa' => 0,
+        ]);
+
+        Periksa::create([
+            'id_pasien' => 4,
+            'id_dokter' => 7,
+            'tgl_periksa' => Carbon::now()->addDay(),
+            'catatan' => 'Ucok Kena Tipes.',
             'biaya_periksa' => 0,
         ]);
     }
-    
 }
