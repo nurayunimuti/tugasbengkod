@@ -2,34 +2,37 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 use App\Models\Periksa;
 
 class PeriksaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        Periksa::create([
-            'id_pasien' => 4,
-            'id_dokter' => 5,
-            'tgl_periksa' => Carbon::now(),
-            'catatan' => 'Tidak ada masalah.',
-            'biaya_periksa' => 0,
-        ]);
+        $pasien = User::where('role', 'pasien')->first(); // Ambil pasien pertama
+        $dokter1 = User::where('email', 'fani.dokter@gmail.com')->first();
+        $dokter2 = User::where('email', 'Jinwo@gmail.com')->first();
 
-        Periksa::create([
-            'id_pasien' => 4,
-            'id_dokter' => 7,
-            'tgl_periksa' => Carbon::now()->addDay(),
-            'catatan' => 'Ucok Kena Tipes.',
-            'biaya_periksa' => 0,
-        ]);
+        if ($pasien && $dokter1) {
+            Periksa::create([
+                'id_pasien' => $pasien->id,
+                'id_dokter' => $dokter1->id,
+                'tgl_periksa' => Carbon::now(),
+                'catatan' => 'Tidak ada masalah.',
+                'biaya_periksa' => 0,
+            ]);
+        }
+
+        if ($pasien && $dokter2) {
+            Periksa::create([
+                'id_pasien' => $pasien->id,
+                'id_dokter' => $dokter2->id,
+                'tgl_periksa' => Carbon::now()->addDay(),
+                'catatan' => 'Ucok Kena Tipes.',
+                'biaya_periksa' => 0,
+            ]);
+        }
     }
-    
 }

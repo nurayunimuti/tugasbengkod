@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label for="exampleSelectRounded0">Pilih Dokter</label>
                 <select class="custom-select rounded-0" id="exampleSelectRounded0" name="id_dokter">
-                    <option value="" selected disabled>Daftar dokter yang ada</option>
+                    <option value="" selected disabled>Daftar dokter yang tersedia</option>
                     @foreach ($dokters as $dokter)
                     <option value="{{ $dokter->id }}">{{ $dokter->nama }}</option>
                     @endforeach
@@ -32,5 +32,5 @@
 @endsection
 
 @section('username')
-    <a href="#" class="d-block">{{ $pasien_name }}</a>
+    {{ $pasien_name }}
 @endsection
