@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lapak Kesehatan | Registration </title>
+    <title>Dokterku | Registrasi </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') }}">
@@ -20,10 +20,10 @@
     <div class="register-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="#" class="h1">Lapak Kesehatan</a>
+                <a href="#" class="h1">Dokterku</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Register a new account</p>
+                <p class="login-box-msg">Daftar Registrasi</p>
 
                 <form action="{{ route('register') }}" method="post">
                     @csrf
@@ -78,12 +78,12 @@
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Register Account</button>
+                            <button type="submit" class="btn btn-primary btn-block">Daftar Akun</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
-                <a href="{{route('show-login')}}" class="text-center">I already have a account</a>
+                <a href="{{route('show-login')}}" class="text-center">Saya sudah Punya Akun</a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

@@ -12,8 +12,8 @@ class PeriksaSeeder extends Seeder
     public function run(): void
     {
         $pasien = User::where('role', 'pasien')->first(); // Ambil pasien pertama
-        $dokter1 = User::where('email', 'fani.dokter@gmail.com')->first();
-        $dokter2 = User::where('email', 'Jinwo@gmail.com')->first();
+        $dokter1 = User::where('email', 'Elaine@gmail.com')->first();
+        $dokter2 = User::where('email', 'Sean@gmail.com')->first();
 
         if ($pasien && $dokter1) {
             Periksa::create([
